@@ -20,8 +20,8 @@ from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 from sklearn.model_selection import train_test_split
 import plotly.express as px
 
-from google.colab import files
-uploaded = files.upload()
+#from google.colab import files
+#uploaded = files.upload()
 
 import pandas as pd
 
