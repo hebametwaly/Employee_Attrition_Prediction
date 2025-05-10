@@ -26,7 +26,7 @@ import plotly.express as px
 import pandas as pd
 
 # Load the uploaded CSV
-#data = pd.read_csv('/content/employee_attrition_dataset.csv')
+data = pd.read_csv('/content/employee_attrition_dataset.csv')
 
 # View the first few rows
 data.head()
