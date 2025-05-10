@@ -29,16 +29,16 @@ import pandas as pd
 import streamlit as st
 
 
-st.set_page_config(page_title="Employee Attrition Predictor", layout="wide")
+st.title("Employee Attrition Prediction")
 
-st.title("🔍 Employee Attrition Prediction and Analysis")
-
-# --- File Upload Section ---
-uploaded_file = st.file_uploader("📤 Upload your employee_attrition_dataset.csv file", type="csv")
+uploaded_file = st.file_uploader("Upload your employee_attrition_dataset.csv file", type="csv")
 
 if uploaded_file is not None:
-    # Load data
     data = pd.read_csv(uploaded_file)
+    st.success("File uploaded successfully!")
+    st.dataframe(data.head())
+else:
+    st.warning("⚠️ Please upload the employee_attrition_dataset.csv file to continue.")
     st.subheader("Preview of Dataset")
     st.dataframe(data.head())
 
