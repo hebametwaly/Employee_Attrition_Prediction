@@ -29,7 +29,7 @@ import pandas as pd
 import streamlit as st
 
 
-data = pd.read_csv("employee_attrition_dataset_10000.csv")  # Only works if file is in repo
+data = pd.read_csv("Employee_Attrition_Prediction/employee_attrition_dataset_10000.csv")  # Only works if file is in repo
 
 data.head()
 data.shape
