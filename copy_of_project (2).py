@@ -29,7 +29,7 @@ import pandas as pd
 import streamlit as st
 
 
-sst.title("Employee Attrition Prediction App")
+st.title("Employee Attrition Prediction App")
 
 # File uploader widget
 uploaded_file = st.file_uploader("Upload your employee attrition dataset CSV file", type="csv")
