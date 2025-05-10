@@ -38,9 +38,9 @@ uploaded_file = st.file_uploader("📤 Upload your employee_attrition_dataset.cs
 
 if uploaded_file is not None:
     # Load data
-    df = pd.read_csv(uploaded_file)
+    data = pd.read_csv(uploaded_file)
     st.subheader("Preview of Dataset")
-    st.dataframe(df.head())
+    st.dataframe(data.head())
 
 data.shape
 
