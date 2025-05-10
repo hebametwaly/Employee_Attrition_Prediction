@@ -29,15 +29,8 @@ import pandas as pd
 import streamlit as st
 import pandas as pd
 
-# Streamlit file uploader
-uploaded_file = st.file_uploader("Upload Employee Attrition Dataset CSV", type="csv")
 
-if uploaded_file is not None:
-    data = pd.read_csv(uploaded_file)
-    st.write("Dataset Preview:")
-    st.dataframe(data)
-else:
-    st.warning("Please upload the employee_attrition_dataset.csv file to proceed.")
+data = pd.read_csv("employee_attrition_dataset_10000.csv")
 
 
 # View the first few rows
