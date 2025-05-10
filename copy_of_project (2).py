@@ -36,18 +36,21 @@ uploaded_file = st.file_uploader("Upload your employee attrition dataset CSV fil
 
 # Check if a file is uploaded
 if uploaded_file is not None:
-    # Load the CSV into a DataFrame
-    data = pd.read_csv(uploaded_file)
-    
-    # Show a success message and display the first few rows
-    st.success("✅ File uploaded successfully!")
-    st.write("Preview of the data:")
-    st.dataframe(data.head())  # Display the first few rows of the data
-
+    try:
+        # Load the CSV into a DataFrame
+        data = pd.read_csv(uploaded_file)
+        
+        # Show a success message and display the first few rows
+        st.success("✅ File uploaded successfully!")
+        st.write("Preview of the data:")
+        st.dataframe(data.head())  # Display the first few rows of the data
+        
+    except Exception as e:
+        # Display the error if reading the file fails
+        st.error(f"❌ Error reading the file: {e}")
 else:
     # Show a warning if no file is uploaded
     st.warning("⚠️ Please upload the dataset to continue.")
-
 
 data.shape
 
