@@ -26,7 +26,19 @@ import plotly.express as px
 import pandas as pd
 
 # Load the uploaded CSV
-data = pd.read_csv('/content/employee_attrition_dataset.csv')
+import streamlit as st
+import pandas as pd
+
+# Streamlit file uploader
+uploaded_file = st.file_uploader("Upload Employee Attrition Dataset CSV", type="csv")
+
+if uploaded_file is not None:
+    data = pd.read_csv(uploaded_file)
+    st.write("Dataset Preview:")
+    st.dataframe(data)
+else:
+    st.warning("Please upload the employee_attrition_dataset.csv file to proceed.")
+
 
 # View the first few rows
 data.head()
