@@ -29,19 +29,26 @@ import pandas as pd
 import streamlit as st
 
 
-st.title("Employee Attrition Prediction")
+sst.title("Employee Attrition Prediction App")
 
-uploaded_file = st.file_uploader("Upload employee_attrition_dataset.csv", type="csv")
+# File uploader widget
+uploaded_file = st.file_uploader("Upload your employee attrition dataset CSV file", type="csv")
 
+# Check if a file is uploaded
 if uploaded_file is not None:
+    # Load the CSV into a DataFrame
     data = pd.read_csv(uploaded_file)
-    st.success("File uploaded successfully!")
-    st.write(data.head())
+    
+    # Show a success message and display the first few rows
+    st.success("✅ File uploaded successfully!")
+    st.write("Preview of the data:")
+    st.dataframe(data.head())  # Display the first few rows of the data
+
 else:
-    st.warning("Please upload the CSV file to continue.")
+    # Show a warning if no file is uploaded
+    st.warning("⚠️ Please upload the dataset to continue.")
 
 
-data.head()
 data.shape
 
 data.info()
