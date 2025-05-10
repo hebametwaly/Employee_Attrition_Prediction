@@ -27,14 +27,20 @@ import pandas as pd
 
 # Load the uploaded CSV
 import streamlit as st
-import pandas as pd
 
 
-data = pd.read_csv("employee_attrition_dataset_10000.csv")
+st.set_page_config(page_title="Employee Attrition Predictor", layout="wide")
 
+st.title("🔍 Employee Attrition Prediction and Analysis")
 
-# View the first few rows
-data.head()
+# --- File Upload Section ---
+uploaded_file = st.file_uploader("📤 Upload your employee_attrition_dataset.csv file", type="csv")
+
+if uploaded_file is not None:
+    # Load data
+    df = pd.read_csv(uploaded_file)
+    st.subheader("Preview of Dataset")
+    st.dataframe(df.head())
 
 data.shape
 
