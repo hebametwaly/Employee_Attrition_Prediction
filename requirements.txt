@@ -7,4 +7,5 @@ scikit-learn
 joblib
 mlflow
 plotly
+dash
 
