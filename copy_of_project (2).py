@@ -29,7 +29,17 @@ import pandas as pd
 import streamlit as st
 
 
-data = pd.read_csv("employee_attrition_dataset_10000.csv")  # Only works if file is in repo
+st.title("Employee Attrition Prediction")
+
+uploaded_file = st.file_uploader("Upload employee_attrition_dataset.csv", type="csv")
+
+if uploaded_file is not None:
+    data = pd.read_csv(uploaded_file)
+    st.success("File uploaded successfully!")
+    st.write(data.head())
+else:
+    st.warning("Please upload the CSV file to continue.")
+
 
 data.head()
 data.shape
