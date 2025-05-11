@@ -29,29 +29,8 @@ import pandas as pd
 import streamlit as st
 
 
-st.title("Employee Attrition Prediction App")
-
-# File uploader widget
-uploaded_file = st.file_uploader("Upload your employee attrition dataset CSV file", type="csv")
-
-# Check if a file is uploaded
-if uploaded_file is not None:
-    try:
-        # Load the CSV into a DataFrame
-        data = pd.read_csv(uploaded_file)
-        
-        # Show a success message and display the first few rows
-        st.success("✅ File uploaded successfully!")
-        st.write("Preview of the data:")
-        st.dataframe(data.head())  # Display the first few rows of the data
-        
-    except Exception as e:
-        # Display the error if reading the file fails
-        st.error(f"❌ Error reading the file: {e}")
-else:
-    # Show a warning if no file is uploaded
-    st.warning("⚠️ Please upload the dataset to continue.")
-
+data = pd.read_csv("employee_attrition_dataset10000.csv")
+data.head()
 data.shape
 
 data.info()
